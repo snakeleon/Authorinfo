@@ -1,8 +1,10 @@
 # Authorinfo
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=2902
+
 Just be modified for my own use
 
 You can add your author info in any source files,such as cpp,c,java,and c#,python,php,bash....
+
 Like this:
 /*=============================================================================
 #  Author:          dantezhu - http://www.vimer.cn
