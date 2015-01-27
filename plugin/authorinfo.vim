@@ -117,12 +117,12 @@ function s:AddTitle()
     normal o
     call setline('.',noTypeChar.preChar.'     FileName: '.expand("%:t"))
     normal o
-    call setline('.',noTypeChar.preChar.'         Desc: ')
+    call setline('.',noTypeChar.preChar.'  Description: ')
     let gotoLn = line('.')
     normal o
     call setline('.',noTypeChar.preChar.'       Author: '.g:vimrc_author)
     normal o
-    call setline('.',noTypeChar.preChar.'        Email: '.g:vimrc_email)
+    call setline('.',noTypeChar.preChar.'       E-Mail: '.g:vimrc_email)
     normal o
     call setline('.',noTypeChar.preChar.'		 Weibo: '.g:vimrc_weibo)
     normal o
