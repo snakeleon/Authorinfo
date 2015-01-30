@@ -1,13 +1,13 @@
-"=============================================================================
-"  Author:          dantezhu - http://www.vimer.cn
-"  Email:           zny2008@gmail.com
-"  FileName:        authorinfo.vim
-"  Description:     
-"  Version:         1.5
-"  LastChange:      2011-02-23 16:42:42
-"  History:         support bash's #!xxx
+"===========================================================================
+"		FileName :	authorinfo.vim
+"	 Description :	
+"		  Author :  dantezhu - http://www.vimer.cn
+"		   Email :  zny2008@gmail.com
+"		 Version :  1.5
+"	  LastChange :  2011-02-23 16:42:42
+"		 History :  support bash's #!xxx
 "                   fix bug for NerdComment's <leader>
-"=============================================================================
+"===========================================================================
 if exists('g:loaded_authorinfo')
     finish
 endif
@@ -113,26 +113,26 @@ function s:AddTitle()
     call s:BeforeTitle()
 
     let firstLine = line('.')
-    call setline('.',noTypeChar.'=============================================================================')
+    call setline('.',noTypeChar.'==========================================================================')
     normal o
-    call setline('.',noTypeChar.preChar.'     FileName: '.expand("%:t"))
+    call setline('.',noTypeChar.preChar.'     FileName :	'.expand("%:t"))
     normal o
-    call setline('.',noTypeChar.preChar.'  Description: ')
+    call setline('.',noTypeChar.preChar.'  Description :	')
     let gotoLn = line('.')
     normal o
-    call setline('.',noTypeChar.preChar.'       Author: '.g:vimrc_author)
+    call setline('.',noTypeChar.preChar.'       Author :	'.g:vimrc_author)
     normal o
-    call setline('.',noTypeChar.preChar.'       E-Mail: '.g:vimrc_email)
+    call setline('.',noTypeChar.preChar.'       E-Mail :	'.g:vimrc_email)
     normal o
-    call setline('.',noTypeChar.preChar.'		 Weibo: '.g:vimrc_weibo)
+    call setline('.',noTypeChar.preChar.'	  HomePage :	'.g:vimrc_homepage)
     normal o
-    call setline('.',noTypeChar.preChar.'      Version: 0.0.1')
+    call setline('.',noTypeChar.preChar.'      Version :	0.1.1')
     normal o
-    call setline('.',noTypeChar.preChar.'   LastChange: '.strftime("%Y-%m-%d %H:%M:%S"))
+    call setline('.',noTypeChar.preChar.'   LastChange :	'.strftime("%Y-%m-%d %H:%M:%S"))
     normal o
-    call setline('.',noTypeChar.preChar.'      History:')
+    call setline('.',noTypeChar.preChar.'      History :')
     normal o
-    call setline('.',noTypeChar.'=============================================================================')
+    call setline('.',noTypeChar.'==========================================================================')
     let lastLine = line('.')
 
     "在最后一行之后做的事情
