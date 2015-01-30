@@ -126,7 +126,7 @@ function s:AddTitle()
     normal o
     call setline('.',noTypeChar.preChar.'	  HomePage :	'.g:vimrc_homepage)
     normal o
-    call setline('.',noTypeChar.preChar.'      Version :	0.1.1')
+    call setline('.',noTypeChar.preChar.'      Version :	0.0.1')
     normal o
     call setline('.',noTypeChar.preChar.'   LastChange :	'.strftime("%Y-%m-%d %H:%M:%S"))
     normal o
@@ -148,6 +148,7 @@ function s:AddTitle()
     startinsert!
     echohl WarningMsg | echo "Succ to add the copyright." | echohl None
 endf
+	
 function s:TitleDet()
     silent! normal ms
     let updated = 0
@@ -155,18 +156,19 @@ function s:TitleDet()
     "默认为添加
     while n < 20
         let line = getline(n)
-        if line =~ '^.*FileName:\S*.*$'
-            let newline=substitute(line,':\(\s*\)\(\S.*$\)$',':\1'.expand("%:t"),'g')
+        if line =~ '^.*FileName :	\S*.*$'
+            let newline=substitute(line,':\(\s*\)\(\S.*$\)$',':\1'	.expand("%:t"),'g')
             call setline(n,newline)
-            let updated = 1
+			let updated = 1
         endif
-        if line =~ '^.*LastChange:\S*.*$'
-            let newline=substitute(line,':\(\s*\)\(\S.*$\)$',':\1'.strftime("%Y-%m-%d %H:%M:%S"),'g')
+        if line =~ '^.*LastChange :\S*.*$'
+            let newline=substitute(line,':\(\s*\)\(\S.*$\)$',':\1'	.strftime("%Y-%m-%d %H:%M:%S"),'g')
             call setline(n,newline)
             let updated = 1
         endif
         let n = n + 1
-    endwhile
+	endwhile
+
     if updated == 1
         silent! normal 's
         echohl WarningMsg | echo "Succ to update the copyright." | echohl None
