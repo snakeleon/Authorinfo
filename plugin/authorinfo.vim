@@ -156,7 +156,7 @@ function s:TitleDet()
     "默认为添加
     while n < 20
         let line = getline(n)
-        if line =~ '^.*FileName :	\S*.*$'
+        if line =~ '^.*FileName :\S*.*$'
             let newline=substitute(line,':\(\s*\)\(\S.*$\)$',':\1'	.expand("%:t"),'g')
             call setline(n,newline)
 			let updated = 1
